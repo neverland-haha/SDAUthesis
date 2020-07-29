@@ -308,30 +308,20 @@ Only choose `xelatex', no `pdflatex' or `latex' and so on.}
 \vspace{3cm}
 
 %表格1
-	{ \zihao{3} \songti 
-		\renewcommand\arraystretch{1.25}
+	\begin{center}
+		\zihao{3}
+		\renewcommand{\arraystretch}{1.2}
 		\begin{tabular}{rl}
-				\phantom{幻影}			题目:	     &   \dlmu[8cm]{\the\titlefirst}         \\
-				\phantom{幻影}    &    \dlmu[8cm] {\the\titlesecond}							%如果题目超过了2行，请修改8cm
+				题目:	     			 		   	   &\dlmu[10cm]{\the \titlefirst} 	\\
+				&\dlmu[10cm] {\the \titlesecond}							\\[2cm]
+				&\makebox[4em][s]{院部}    \hspace{0.2cm}	\dlmu[5.5cm]{\the \college} \\
+				&\makebox[4em][s]{专业班级}	\hspace{0.2cm}		\dlmu[5.5cm]{\the \major}      \\
+				&\makebox[4em][s]{届次}	\hspace{0.2cm}	\dlmu[5.5cm]{\the \grade}   \\
+				&\makebox[4em][s]{学生姓名}	\hspace{0.2cm}	\dlmu[5.5cm]{\the \author}   \\
+				&\makebox[4em][s]{学号}	\hspace{0.2cm}	\dlmu[5.5cm]{\the \serialnumber}   \\ 
+				&\makebox[4em][s]{指导教师}	\hspace{0.2cm}	\dlmu[5.5cm]{\the \advisors}   \\
 		\end{tabular}
-	}
-
-\vspace{2cm}	
-
-%表格2	
-{
-	\zihao{3} \songti  
-	\renewcommand\arraystretch{1.5}      
-	\begin{tabular}{crl}
-	\phantom{幻幻影影}   &\makebox[4em][s]{院部}          & \dlmu[5cm]{\the \college}  \\
-	\phantom{幻幻影影}   &\makebox[4em][s]{专业班级 } &\dlmu[5cm]{\the \major}    \\ 
-	\phantom{幻幻影影}   &\makebox[4em][s]{届次} 		    &\dlmu[5cm]{\the \grade} \\ 
-	\phantom{幻幻影影}   &\makebox[4em][s]{学生姓名}  &\dlmu[5cm]{\the \author}   \\
-	\phantom{幻幻影影}   &\makebox[4em][s]{学号}          &\dlmu[5cm]{\the \serialnumber}  \\
-	\phantom{幻幻影影}   &\makebox[4em][s]{指导教师}  &\dlmu[5cm]{\the \advisors}
-	\end{tabular}
-}
-	
+	\end{center}
 	 \vspace{80pt}
 	 \centering
 	{  \zihao{3}二 \ 〇   {\ \the\submityear} \ 年{ \ \the\submitmonth} \ 月  {\ \the \submitdate} \ 日 }
