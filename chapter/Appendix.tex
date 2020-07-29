@@ -1,0 +1,50 @@
+% !TEX encoding = UTF-8
+%附录内容，自行修改
+\Appendix																   %勿删
+\addcontentsline{toe}{chapter}{Appendix}             %加入英文的目录，请勿删去.
+
+\begin{lstlisting}[language=MATLAB]
+function [] = m1_callback(source,evendata)
+	handles = guidata(source);
+	[filename,path] = uigetfile({'*.';'*.jpg';'*.png';'*.jpeg';'*.bmp';;},'选择图片');
+	try  isa(filename,'numeric');                       
+		truename = [ path,filename ];              %拼接真正的路径名
+		im = imread(truename);                        %显示图片
+		subplot(2,3,1);                         
+		imshow(im);
+		chicun = size(im);
+	switch numel(chicun)
+		case 2
+		im1 = im;
+		case 3
+		im1 = rgb2gray(im);
+	end
+		im1 = double(im1);                                 %读入的是uint8类型，要转double才能计算
+		handles.im1 = im1;
+		guidata(source,handles);
+		title('原始图像','fontsize',20);
+		catch
+	warn = errordlg('你取消了选择,请勾选文件','File Error');
+	end
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language = python]
+##!/usr/bin/python## -*- 
+coding: UTF-8 -*-
+#flag判断标志 number_sum为总和
+	flag = True
+	number_sum = 0
+	while flag == True:   
+	number_a = input('Please Enter a number: ')    
+	number_b = input('Please Enter another number: ')  
+	try:          
+	a = int(number_a)  
+	b = int(number_b)   
+	except ValueError:        
+	print('You have Entered wrong number')    
+	else:        
+	number_sum = a + b     
+	print('The sum of two numbers: ' + str(number_sum))
+	flag = False
+\end{lstlisting}
