@@ -11,7 +11,7 @@
 \ProvidesClass{SDAUthesis}[2020/08/01 v1.0 Standard LaTeX documentclass]
 %\ProcessOptions\relax    %which should be saved as stub.cls where LATEX can find it
 \LoadClass[a4paper,UTF8,openany,oneside,12pt,AutoFakeBold]{ctexbook}
-\AtEndOfPackage{\input{SDAU.cfg}}   %配置文件
+%\AtEndOfPackage{\input{SDAU.cfg}}   %配置文件
 
 %检查是否由xelatex编译
 \RequirePackage{ifxetex}
