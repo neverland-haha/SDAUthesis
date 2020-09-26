@@ -2,18 +2,13 @@
 \chapter{表格}
 \echapter{chart}
 
-
-\begin{table}
-	\centering
-	\caption{测试用的表格}	
-	\begin{tabular}{cc}
-		  1    &      2  \\
-		  2    &      3
-	\end{tabular}
-\end{table}
+由于格式要求表格字体内为5号字，所以需要自己在table和tabular环境前加上 \verb|\zihao{5}| \\的代码，可以参照工作示例。
+表格可以使用浮动体或者非浮动体的方式，建议没有强迫症的同学还是使用浮动体的环境，如果有强迫症的同学也还是稍微改一改，如果非要选择非浮动题环境，那么参考下面的工作示例。
 
 \begin{tcode}
+%浮动题环境示例
 \begin{table}
+	\zihao{5}
 	\centering
 	\caption{已经定义了的定理}
 	\begin{tabular}{|c|c|}
@@ -31,8 +26,9 @@
 \end{table}
 \end{tcode}
 
-
+%浮动题环境示例
 \begin{table}
+	\zihao{5}
 	\centering
 	\caption{已经定义了的定理}
 	\begin{tabular}{|c|c|}
@@ -45,7 +41,50 @@
 		注		  &	  remark		\\  \hline
 		解		  &	  solution   \\ \hline
 		证明		&	proofname  \\ \hline
- 		       
 	\end{tabular}
 \end{table}
+
+
+%非浮动题工作代码示例。
+%由于captionof针对非浮动体，所以它距离所需要的表或者线的垂直距离变成了0，由于book、article等类的间距为10pt所以需要加入vspace=10pt
+\begin{tcode}
+	{%非浮动题工作代码示例。
+		\zihao{5}	
+		\centering
+		\captionof{table}{已经定义了的定理}
+		\vspace{10pt}				
+		\begin{tabular}{|c|c|}
+			\hline               
+			定义      &   definition  \\   \hline 
+			定理      &   theorem    \\   \hline
+			公理      &   axiom		\\   \hline
+			引理		&	lemma		\\   \hline
+			命题	   &	proposition \\  \hline
+			注		  &	  remark		\\  \hline
+			解		  &	  solution   \\ \hline
+			证明		&	proofname  \\ \hline
+				\end{tabular}
+	}
+\end{tcode}
+
+%非浮动题环境
+	{
+	\zihao{5}
+	\centering
+	\captionof{table}{已经定义了的定理}
+	\vspace{10pt}
+	\begin{tabular}{|c|c|}
+		\hline               
+		定义      &   definition  \\   \hline 
+		定理      &   theorem    \\   \hline
+		公理      &   axiom		\\   \hline
+		引理		&	lemma		\\   \hline
+		命题	   &	proposition \\  \hline
+		注		  &	  remark		\\  \hline
+		解		  &	  solution   \\ \hline
+		证明		&	proofname  \\ \hline
+	\end{tabular}
+
+}
+
 

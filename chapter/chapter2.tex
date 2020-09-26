@@ -12,10 +12,79 @@
 	  \label{canny}
 \end{figure}
 
-\begin{figure}
-	\includegraphics[width=8cm,height=8cm]{SDAU.jpg}
+
+
+\begin{tcode}
+	\begin{figure}[!htbp]
+		\includegraphics[scale=0.5]{canny.jpg}
+		\centering
+		\caption{Canny边缘提取算法创始人}
+		\label{canny}
+	\end{figure}
+\end{tcode}
+如果想使用非浮动题环境或者软强制定位图片，在附加参数选项中加入[!htbp]或者使用captionof命令，例如:
+
+{
 	\centering
-	\caption{山东农业大学校徽}
+	\includegraphics[scale=0.5]{SDAU.jpg}
+	\captionof{figure}{山东农业大学校徽}
 	\label{xiaohui}
+}
+
+\begin{tcode}
+	{
+		\centering
+		\includegraphics[scale=0.5]{SDAU.jpg}
+		\captionof{figure}{山东农业大学校徽}
+		\label{xiaohui}
+	}
+\end{tcode}
+更多关于插图的技巧请自行阅读我在文件夹中留下的插图手册，或者自行观看工作室的直播。直播的链接为:
+\href{https://www.bilibili.com/video/BV1nv41117q9}{https://www.bilibili.com/video/BV1nv41117q9}.
+如果需要绘制矢量图，请自行阅读tikz帮助文档，或者在小屋内下载相关作者翻译的文档,或者使用ppt、visio等软件绘制
+
+
+%tikz的工作示例
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+\node (ciji)  [] at (-0.5,0) {刺激};
+\node (ganshouqi)[draw,minimum height = 0.8cm,thick] at (1.5,0)  {感受器};
+\node (shenjing)    [draw,minimum height = 0.8cm,thick]  at (4,0) {神经网络};
+\node (xiaoying)   [draw,minimum height = 0.8cm,thick] at (6.5,0) {效应器};
+\node (xiangying) [minimum height = 0.8cm,thick] at (8.5,0) {响应};
+		\draw [-stealth]  (ciji.east) -- (ganshouqi.west);
+\draw [-stealth] ($(ganshouqi.east) + (0, 2mm)$) -- ($(shenjing.west) + (0,
+2mm)$);
+\draw [-stealth] ($(shenjing.west) + (0, -2mm)$) -- ($(ganshouqi.east) + (0,
+-2mm)$);
+\draw [-stealth] ($ (shenjing.east) + (0,2mm) $)  -- ($(xiaoying.west) + (0,2mm) $);
+\draw [-stealth] ($ (xiaoying.west) + (0,-2mm) $)  -- ($(shenjing.east) + (0,-2mm) $);
+\draw [-stealth] (xiaoying.east) -- (xiangying.west); 
+	\end{tikzpicture}
+   \caption{神经网络}
 \end{figure}
 
+%tikz的代码
+\begin{tcode}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\node (ciji)  [] at (-0.5,0) {刺激};
+	\node (ganshouqi)[draw,minimum height = 0.8cm,thick] at (1.5,0)  {感受器};
+	\node (shenjing)    [draw,minimum height = 0.8cm,thick]  at (4,0) {神经网络};
+	\node (xiaoying)   [draw,minimum height = 0.8cm,thick] at (6.5,0) {效应器};
+	\node (xiangying) [minimum height = 0.8cm,thick] at (8.5,0) {响应};
+	\draw [-stealth]  (ciji.east) -- (ganshouqi.west);
+	\draw [-stealth] ($(ganshouqi.east) + (0, 2mm)$) -- ($(shenjing.west) + (0,
+	2mm)$);
+	\draw [-stealth] ($(shenjing.west) + (0, -2mm)$) -- ($(ganshouqi.east) + (0,
+	-2mm)$);
+	\draw [-stealth] ($ (shenjing.east) + (0,2mm) $)  -- ($(xiaoying.west) + (0,2mm) $);
+	\draw [-stealth] ($ (xiaoying.west) + (0,-2mm) $)  -- ($(shenjing.east) + (0,-2mm) $);
+	\draw [-stealth] (xiaoying.east) -- (xiangying.west); 
+	\end{tikzpicture}
+   \caption{神经网络}
+\end{figure}
+
+\end{tcode}
